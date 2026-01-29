@@ -10,13 +10,13 @@ Setup:
 
 Usage:
     # For testing with simulated events:
-    python camera_ingest.py --api-url https://worker-productivity-dashboard.vercel.app/ --simulate
+    python camera_ingest.py --api-url https://worker-productivity-dashboard-final-sage.vercel.app/ --simulate
     
     # For real camera integration:
-    python camera_ingest.py --api-url https://worker-productivity-dashboard.vercel.app/ --camera 0
+    python camera_ingest.py --api-url https://worker-productivity-dashboard-final-sage.vercel.app/ --camera 0
     
     # For RTSP stream:
-    python camera_ingest.py --api-url https://worker-productivity-dashboard.vercel.app/ --camera rtsp://user:pass@ip:port/stream
+    python camera_ingest.py --api-url https://worker-productivity-dashboard-final-sage.vercel.app/ --camera rtsp://user:pass@ip:port/stream
 """
 
 import argparse

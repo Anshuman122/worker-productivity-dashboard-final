@@ -4,7 +4,7 @@ A full-stack web application that ingests events from CCTV computer vision syste
 
 ## Live Demo
 
-[View Live Application](https://worker-productivity-dashboard.vercel.app/)
+[View Live Application](https://worker-productivity-dashboard-final-sage.vercel.app/)
 
 ## Architecture Overview
 
@@ -347,7 +347,7 @@ Ingests a single event into the system. Evaluators can use this endpoint to add 
 
 **cURL Example**:
 ```bash
-curl -X POST https://worker-productivity-dashboard.vercel.app/api/events \
+curl -X POST https://worker-productivity-dashboard-final-sage.vercel.app/api/events \
   -H "Content-Type: application/json" \
   -d '{
     "timestamp": "2026-01-28T10:15:00Z",
@@ -369,7 +369,7 @@ curl -X POST https://worker-productivity-dashboard.vercel.app/api/events \
 
 **Example**:
 ```bash
-curl "https://worker-productivity-dashboard.vercel.app/api/events?worker_id=W1&limit=10"
+curl "https://worker-productivity-dashboard-final-sage.vercel.app/api/events?worker_id=W1&limit=10"
 ```
 
 ### GET /api/metrics - Get Productivity Metrics
@@ -399,7 +399,7 @@ Regenerates sample events for testing. No request body required.
 
 **Example**:
 ```bash
-curl -X POST https://worker-productivity-dashboard.vercel.app/api/seed
+curl -X POST https://worker-productivity-dashboard-final-sage.vercel.app/api/seed
 ```
 
 ### DELETE /api/seed - Clear All Events
@@ -408,7 +408,7 @@ Removes all events from the database.
 
 **Example**:
 ```bash
-curl -X DELETE https://worker-productivity-dashboard.vercel.app/api/seed
+curl -X DELETE https://worker-productivity-dashboard-final-sage.vercel.app/api/seed
 ```
 
 ---
@@ -429,7 +429,7 @@ Evaluators can add custom data in two ways:
 ```bash
 # Add multiple product_count events for W1
 for i in {1..10}; do
-  curl -X POST https://worker-productivity-dashboard.vercel.app/api/events \
+  curl -X POST https://worker-productivity-dashboard-final-sage.vercel.app/api/events \
     -H "Content-Type: application/json" \
     -d "{
       \"timestamp\": \"2026-01-28T0${i}:00:00Z\",
@@ -444,7 +444,7 @@ done
 
 **Scenario 2: Idle Worker**
 ```bash
-curl -X POST https://worker-productivity-dashboard.vercel.app/api/events \
+curl -X POST https://worker-productivity-dashboard-final-sage.vercel.app/api/events \
   -H "Content-Type: application/json" \
   -d '{
     "timestamp": "2026-01-28T14:00:00Z",
@@ -459,10 +459,10 @@ curl -X POST https://worker-productivity-dashboard.vercel.app/api/events \
 **Scenario 3: Reset and Fresh Data**
 ```bash
 # Clear all events
-curl -X DELETE https://worker-productivity-dashboard.vercel.app/api/seed
+curl -X DELETE https://worker-productivity-dashboard-final-sage.vercel.app/api/seed
 
 # Generate fresh dummy data
-curl -X POST https://worker-productivity-dashboard.vercel.app/api/seed
+curl -X POST https://worker-productivity-dashboard-final-sage.vercel.app/api/seed
 ```
 
 ---
@@ -606,7 +606,7 @@ pip install requests opencv-python numpy
 **Simulation Mode (no camera required)**:
 ```bash
 # Point to your deployed app or localhost
-python scripts/camera_ingest.py --api-url https://worker-productivity-dashboard.vercel.app --simulate
+python scripts/camera_ingest.py --api-url https://worker-productivity-dashboard-final-sage.vercel.app --simulate
 
 # Run for specific duration
 python scripts/camera_ingest.py --api-url http://localhost:3000 --simulate --duration 300
@@ -618,10 +618,10 @@ python scripts/camera_ingest.py --api-url http://localhost:3000 --simulate --int
 **Real Camera Integration**:
 ```bash
 # USB camera (index 0)
-python scripts/camera_ingest.py --api-url https://worker-productivity-dashboard.vercel.app--camera 0
+python scripts/camera_ingest.py --api-url https://worker-productivity-dashboard-final-sage.vercel.app --camera 0
 
 # RTSP stream
-python scripts/camera_ingest.py --api-url https://worker-productivity-dashboard.vercel.app --camera "rtsp://user:pass@ip:port/stream"
+python scripts/camera_ingest.py --api-url https://worker-productivity-dashboard-final-sage.vercel.app --camera "rtsp://user:pass@ip:port/stream"
 ```
 
 ### Integrating Your ML Model
