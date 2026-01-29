@@ -1,4 +1,4 @@
-
+"use client"
 import { useState } from "react"
 import useSWR from "swr"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"

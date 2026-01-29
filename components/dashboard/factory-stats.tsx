@@ -1,4 +1,4 @@
-
+"use client"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Factory, Clock, Package, TrendingUp, Users, Monitor } from "lucide-react"
 import type { FactoryMetrics } from "@/lib/db"
